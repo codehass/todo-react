@@ -21,6 +21,7 @@ const InputTodo = (props) => {
         title: '',
       });
     } else {
+      // eslint-disable-next-line
       alert('Please write item');
     }
   };
@@ -35,7 +36,7 @@ const InputTodo = (props) => {
         name="title"
         onChange={onChange}
       />
-      <button className="input-submit">
+      <button type="button" className="input-submit">
         <FaPlusCircle />
       </button>
     </form>

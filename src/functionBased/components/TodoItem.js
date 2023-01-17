@@ -33,9 +33,13 @@ const TodoItem = (props) => {
     editMode.display = 'none';
   }
 
-  useEffect(() => () => {
-    console.log('Cleaning up...');
-  }, []);
+  useEffect(
+    () => () => {
+      // eslint-disable-next-line
+      console.log('Cleaning up...');
+    },
+    [],
+  );
 
   return (
     <li className={styles.item}>
@@ -46,7 +50,7 @@ const TodoItem = (props) => {
           checked={completed}
           onChange={() => props.handleChangeProps(id)}
         />
-        <button onClick={() => props.deleteTodoProps(id)}>
+        <button type="button" onClick={() => props.deleteTodoProps(id)}>
           <FaTrash style={{ color: 'orangered', fontSize: '16px' }} />
         </button>
         <span style={completed ? completedStyle : null}>{title}</span>
